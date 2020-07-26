@@ -1,0 +1,77 @@
+import random
+print("Childern Math Quiz Game")
+q=0 #questin number
+qp=0 #Question Point
+name=input("")
+for i in range(5):
+    if(q<=5):
+        qv=random.randint(10,99)
+        qv1=random.randint(10,99)
+        print("Q.No.",q+1)
+        print(" ",qv)
+        print("+",qv1)
+        print("_"*15)
+        u=int(input(""))
+        print("_"*15)
+        if(u==(qv+qv1)):
+            print("Right Answer")
+            qp=qp+1
+        else:
+            print("Wrong Answer","Right is ",(qv+qv1))
+        print("_"*15)
+        q=q+1
+        if(q==5):
+            for i in range(99):
+                qv=random.randint(10,99)
+                qv1=random.randint(10,99)
+                if(qv>qv1):
+                    print("Q.No.",q+1)
+                    print(" ",qv)
+                    print("-",qv1)
+                    print("_"*15)
+                    u=int(input(""))
+                    print("_"*15)
+                    if(u==(qv-qv1)):
+                        print("Right Answer")
+                        qp=qp+1
+                    else:
+                        print("Wrong Answer","Right is ",(qv-qv1))
+                    print("_"*15)
+                    q=q+1
+                    if(q==10):
+                        break
+            for i in range(5):
+                qv=random.randint(10,99)
+                qv=random.randint(1,9)
+                print("Q.No.",q+1)
+                print(" ",qv)
+                print("*",qv1)
+                print("_"*15)
+                u=int(input())
+                print("_"*15)
+                if(u==(qv*qv1)):
+                    print("Right Answer")
+                    qp=qp+1
+                else:
+                    print("Wrong Answer Right Answer is ",(qv*qv1))
+                print("_"*15)
+                q=q+1
+                if(q==15):
+                    break
+            for i in range(5):
+                qv=random.randint(10,99)
+                qv1=random.randint(2,9)
+                print("Q.No.",q+1)
+                print(" ",qv)
+                print("/",qv1)
+                print("_"*15)
+                u=int(input(""))
+                print("_"*15)
+                if(u==(int(qv/qv1))):
+                    print("Right Answer")
+                    qp=qp+1
+                else:
+                    print("Wrong Answer , Right Answer is ",(int(qv/qv1)))              	
+print("Total Question is ",str(q))
+print("Right Ans",str(qp))
+print("Wrong",(q-qp))
